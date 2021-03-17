@@ -12,8 +12,8 @@ enum ERROR{
 };
 
 int binary_write(std::string const &filename, std::string const &path, const char *data){
-    char dash = (path.back() == '\\' || path.back() == '/')? '\\' : NULL; // checking if the file path came with / \ on the end !=> assigning one
-    std::string full_path = path + dash + filename;
+    char dash = (path.back() != '\\' && path.back() != '/')? '/' : NULL; // checking if the file path came with / \ on the end !=> assigning one
+    std::string full_path = path + dash + filename + ".dat";
     std::ofstream wf(full_path.c_str(), std::ios::binary | std::ios::out | std::ios::app);
     if(!wf) return ERROR_OPENING_OFILE;
     wf.write(data, sizeof(data));
@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     InterfaceWidget mainPage;
     mainPage.show();
     uint32_t x;
-    if(binary_write("file1", "example_files", "Lorem ipsum dolor sit amet") > 0){
+    if(binary_write("file1", "C:/Users/NMaslovskaya/CLionProjects/qt_file_processing/example_files", "Lorem ipsum dolor sit amet") > 0){
         std::cerr << "Something is wrong" << std::endl;
     }
     std::thread th([&](){
