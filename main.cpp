@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <thread>
+#include <vector>
 #include <Catch2-2.13.4/include/catch.hpp>
 #include <toml11-3.6.0/toml.hpp>
 
@@ -33,8 +34,9 @@ int binary_read(std::string const &path){
     std::ifstream file_read(path.c_str(), std::ios::binary);
     if(!file_read) return ERROR_OPENING_IFILE;
     double data;
+    std::cout << "data do be reading doe" << std::endl;
     while(file_read.read((char*)&data, sizeof(data))){
-        std::cout << data << "  ";
+        //std::cout << data << "  ";
     }
     file_read.close();
     return 0;
@@ -46,12 +48,27 @@ int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     InterfaceWidget mainPage;
     mainPage.show();
+    auto cfg_data = toml::parse("../toml_cfg/cfg.toml");
+    std::vector<std::string> file_path;
     try {
-        throw binary_read("C:\\Users\\NMaslovskaya\\CLionProjects\\qt_file_processing\\example_files\\file1.bin");
-    }catch(int err){
-        if(err < 0) std::cerr << "Error: " << err << std::endl;
+        file_path = toml::find<std::vector<std::string>>(cfg_data, "paths");
+    }catch(const std::out_of_range& e){
+        std::cerr << "Couldn't find specified string vector" << std::endl;
+        return 0;
+    }
+    std::vector<std::thread> thread_vec;
+    thread_vec.resize(file_path.size());
+    for(int i = 0; i < thread_vec.size(); ++i){
+        thread_vec[i] = std::thread([&](){
+            try {
+                throw binary_read(file_path[i]);
+            }catch(int err){
+                if(err < 0) std::cerr << "Error: " << err << std::endl;
+            }
+        });
     }
     a.exec();
+    for(auto &thread: thread_vec) thread.join();
 
     return 0;
 }

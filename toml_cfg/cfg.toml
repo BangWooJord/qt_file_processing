@@ -1,1 +1,1 @@
-paths = ["example_files/","",""]
+paths = ["../example_files/file1.bin","../example_files/file2.bin","../example_files/file3.bin", "../example_files/file4.bin"]
