@@ -42,7 +42,7 @@ int binary_read(std::string const &path){
     return 0;
 }
 
-//TODO: Считывание из томл -> вектор потоков -> одновременное считывание из нескольких файлов ->
+//TODO: одновременное считывание из нескольких файлов ->
 //TODO: -> юнит тесты -> GUI -> название файла в GUI -> индикатор выполнения для каждого файла
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
@@ -57,15 +57,15 @@ int main(int argc, char *argv[]) {
         return 0;
     }
     std::vector<std::thread> thread_vec;
-    thread_vec.resize(file_path.size());
-    for(int i = 0; i < thread_vec.size(); ++i){
-        thread_vec[i] = std::thread([&](){
+    thread_vec.reserve(file_path.size());
+    for(auto &file : file_path){
+        thread_vec.emplace_back(std::thread([&](){
             try {
-                throw binary_read(file_path[i]);
+                throw binary_read(file);
             }catch(int err){
                 if(err < 0) std::cerr << "Error: " << err << std::endl;
             }
-        });
+        }));
     }
     a.exec();
     for(auto &thread: thread_vec) thread.join();
