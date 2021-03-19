@@ -1,25 +1,29 @@
 #include "interfacewidget.h"
 #include "ui_InterfaceWidget.h"
 
-InterfaceWidget::InterfaceWidget(QWidget *parent, int file_amount) :
+InterfaceWidget::InterfaceWidget(QWidget *parent, const std::set<std::string>& file_set) :
         QWidget(parent), ui(new Ui::InterfaceWidget) {
     ui->setupUi(this);
     this->setStyleSheet(""
                         );
 
     v_layout = new QVBoxLayout(this);
+    const int file_amount = file_set.size();
     h_layout = new QHBoxLayout*[file_amount];
 
     text_lbl = new QLabel*[file_amount];
     size_lbl = new QLabel*[file_amount];
-    for(int i = 0; i < file_amount; ++i){
+    int i = 0;
+    for(const auto &set_iterator: file_set){
         text_lbl[i] = new QLabel(this);
-            text_lbl[i]->setText("Length of file number " + QString::number(i+1));
+            text_lbl[i]->setText("File " + QString::number(i+1));
         size_lbl[i] = new QLabel(this);
+            size_lbl[i]->setText("Length: " + QString::number(file_length(set_iterator)) + " ch");
         h_layout[i] = new QHBoxLayout(this);
             h_layout[i]->addWidget(text_lbl[i], 0, Qt::AlignCenter);
             h_layout[i]->addWidget(size_lbl[i], 0, Qt::AlignCenter);
         v_layout->addLayout(h_layout[i]);
+        ++i;
     }
     this->setLayout(v_layout);
 }
@@ -29,5 +33,9 @@ InterfaceWidget::~InterfaceWidget(){
 }
 
 void InterfaceWidget::setSize(int id, double size) {
-    this->size_lbl[id]->setText(QString::number(size, 'g', 12) + " characters");
+    this->size_lbl[id]->setText("Length: " + QString::number(size, 'g', 12) + " characters");
+}
+
+void InterfaceWidget::setCompleteStatus(int id) {
+    this->text_lbl[id]->setText(this->text_lbl[id]->text() + " processing complete");
 }
