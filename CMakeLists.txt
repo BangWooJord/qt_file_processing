@@ -11,7 +11,7 @@ set(QT_VERSION 5)
 set(REQUIRED_LIBS Core Gui Widgets)
 set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets)
 
-add_executable(${PROJECT_NAME} main.cpp qt_interface/interfacewidget.cpp qt_interface/interfacewidget.h qt_interface/interfacewidget.ui)
+add_executable(${PROJECT_NAME} main.cpp qt_interface/interfacewidget.cpp qt_interface/interfacewidget.h qt_interface/interfacewidget.ui headers/file_related.h headers/ERR_ENUM.h src/file_related.cpp)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
