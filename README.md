@@ -6,5 +6,5 @@ The whole point is for those files to be big, so that threads will actually have
 Technologies:
   - C++(17)
   - Qt(5.14.2)
-  - Toml11(2.13.4) - https://github.com/ToruNiina/toml11 library to work with *.toml. 
-  - Catch2(3.6.0) - https://github.com/catchorg/Catch2 library for unit-tests.
+  - Toml11(3.6.0) - https://github.com/ToruNiina/toml11 library to work with *.toml. 
+  - Catch2(2.13.4) - https://github.com/catchorg/Catch2 library for unit-tests.
