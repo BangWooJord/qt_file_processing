@@ -16,7 +16,9 @@ InterfaceWidget::InterfaceWidget(QWidget *parent, const std::set<std::string>& f
     int i = 0;
     for(const auto &set_iterator: file_set){
         text_lbl[i] = new QLabel(this);
-            text_lbl[i]->setText("File " + QString::number(i+1));
+            std::string file = set_iterator;
+            if(!remove_path(file)) std::cerr << "Couldn't remove path" << std::endl;
+            text_lbl[i]->setText("File " + QString::fromStdString(file));
         size_lbl[i] = new QLabel(this);
             size_lbl[i]->setText("Length: " + QString::number(file_length(set_iterator)) + " ch");
         h_layout[i] = new QHBoxLayout(this);
@@ -30,10 +32,6 @@ InterfaceWidget::InterfaceWidget(QWidget *parent, const std::set<std::string>& f
 
 InterfaceWidget::~InterfaceWidget(){
     delete text_lbl;
-}
-
-void InterfaceWidget::setSize(int id, double size) {
-    this->size_lbl[id]->setText("Length: " + QString::number(size, 'g', 12) + " characters");
 }
 
 void InterfaceWidget::setCompleteStatus(int id) {

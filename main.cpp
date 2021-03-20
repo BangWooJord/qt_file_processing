@@ -23,7 +23,7 @@ bool openConfig(std::string const &cfg_path, std::string const &value, std::set<
     }
     return true;
 }
-//TODO: юнит тесты -> GUI название файла
+//TODO: юнит тесты
 
 int main(int argc, char *argv[]) {
     auto *a = new QApplication(argc, argv);
