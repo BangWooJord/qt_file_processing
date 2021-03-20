@@ -5,7 +5,6 @@
 #include <vector>
 #include <set>
 #include <toml11-3.6.0/toml.hpp>
-#include "headers/file_related.h"
 
 bool openConfig(std::string const &cfg_path, std::string const &value, std::set<std::string> &unique_path){
     auto cfg_data = toml::parse(cfg_path);

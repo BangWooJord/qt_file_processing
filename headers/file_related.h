@@ -2,6 +2,7 @@
 #define QT_FILE_PROCESSING_FILE_RELATED_H
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include "ERR_ENUM.h"
 
 //writing random numbers into binary file

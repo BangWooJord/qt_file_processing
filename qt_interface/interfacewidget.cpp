@@ -18,7 +18,7 @@ InterfaceWidget::InterfaceWidget(QWidget *parent, const std::set<std::string>& f
         text_lbl[i] = new QLabel(this);
             std::string file = set_iterator;
             if(!remove_path(file)) std::cerr << "Couldn't remove path" << std::endl;
-            text_lbl[i]->setText("File " + QString::fromStdString(file));
+            text_lbl[i]->setText(QString::fromStdString(file));
         size_lbl[i] = new QLabel(this);
             size_lbl[i]->setText("Length: " + QString::number(file_length(set_iterator)) + " ch");
         h_layout[i] = new QHBoxLayout(this);

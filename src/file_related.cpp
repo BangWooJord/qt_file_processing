@@ -1,5 +1,4 @@
 #include "../headers/file_related.h"
-#include <cstring>
 
 int binary_write(std::string const &filename, std::string const &path, const char *data){
     char dash = (path.back() != '\\' && path.back() != '/')? '/' : NULL; // checking if the file path came with / \ on the end !=> assigning one
