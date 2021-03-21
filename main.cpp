@@ -29,13 +29,14 @@ int main(int argc, char *argv[]) {
                 if (err < 0) std::cerr << "Error: " << err << std::endl;
             }
         }));
+        mainPage.setStatus(id, "processing");
         ++id;
     }
     id = 0;
     std::thread thread_wait([&](){
         for(auto &thread: thread_vec) {
             thread.join();
-            mainPage.setCompleteStatus(id);
+            mainPage.setStatus(id, "processing complete");
             ++id;
         }
     });

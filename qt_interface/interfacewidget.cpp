@@ -1,39 +1,56 @@
 #include "interfacewidget.h"
 #include "ui_InterfaceWidget.h"
 
+
+fileObject::fileObject(const QString &_file_name, const QString &_status, const QString &_length) {
+    file_name = new QLabel();
+    file_name->setText(_file_name);
+    status = new QLabel();
+    status->setText(_status);
+    length = new QLabel();
+    length->setText(_length);
+
+    this->addWidget(file_name, 0, Qt::AlignCenter);
+    this->addWidget(status, 0, Qt::AlignCenter);
+    this->addWidget(length, 0, Qt::AlignCenter);
+}
+fileObject::~fileObject(){
+    delete file_name;
+    delete status;
+    delete length;
+}
+void fileObject::setStatus(const std::string &_status) {
+    this->status->setText(QString::fromStdString(_status));
+}
+
+
 InterfaceWidget::InterfaceWidget(QWidget *parent, const std::set<std::string>& file_set) :
         QWidget(parent), ui(new Ui::InterfaceWidget) {
     ui->setupUi(this);
     this->setStyleSheet(""
                         );
+    const int file_amount = file_set.size();
 
     v_layout = new QVBoxLayout(this);
-    const int file_amount = file_set.size();
-    h_layout = new QHBoxLayout*[file_amount];
+    files = new fileObject*[file_amount];
 
-    text_lbl = new QLabel*[file_amount];
-    size_lbl = new QLabel*[file_amount];
     int i = 0;
-    for(const auto &set_iterator: file_set){
-        text_lbl[i] = new QLabel(this);
-            std::string file = set_iterator;
+    for(const auto &file_iterator: file_set){
+        std::string file = file_iterator;
             if(!remove_path(file)) std::cerr << "Couldn't remove path" << std::endl;
-            text_lbl[i]->setText(QString::fromStdString(file));
-        size_lbl[i] = new QLabel(this);
-            size_lbl[i]->setText("Length: " + QString::number(file_length(set_iterator)) + " ch");
-        h_layout[i] = new QHBoxLayout(this);
-            h_layout[i]->addWidget(text_lbl[i], 0, Qt::AlignCenter);
-            h_layout[i]->addWidget(size_lbl[i], 0, Qt::AlignCenter);
-        v_layout->addLayout(h_layout[i]);
+        files[i] = new fileObject(QString::fromStdString(file), "",
+                                  QString::number(file_length(file_iterator)));
+        v_layout->addLayout(files[i]);
         ++i;
     }
     this->setLayout(v_layout);
 }
 
 InterfaceWidget::~InterfaceWidget(){
-    delete text_lbl;
+    delete files;
+    delete v_layout;
 }
 
-void InterfaceWidget::setCompleteStatus(int id) {
-    this->text_lbl[id]->setText(this->text_lbl[id]->text() + " processing complete");
+void InterfaceWidget::setStatus(int id, std::string const &status) {
+    this->files[id]->setStatus(status);
 }

@@ -14,19 +14,36 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class InterfaceWidget; }
 QT_END_NAMESPACE
 
+class fileObject : public QHBoxLayout{
+private:
+    QLabel *file_name;
+    QLabel *status;
+    QLabel *length;
+public:
+    //constructor
+    fileObject(QString const &_file_name, QString const &_status, QString const &_length);
+    //destructor
+    ~fileObject() override;
+
+    //methods
+    void setStatus(std::string const &_status);
+};
+
 class InterfaceWidget : public QWidget {
 Q_OBJECT
 
 public:
+    //constructor
     explicit InterfaceWidget(QWidget *parent = nullptr, const std::set<std::string>& file_set = {});
+    //destructor
     ~InterfaceWidget() override;
-    void setCompleteStatus(int id);
+
+    //methods
+    void setStatus(int id, std::string const &status);
 private:
     std::unique_ptr<Ui::InterfaceWidget> ui;
-    QLabel **text_lbl;
-    QLabel **size_lbl;
     QVBoxLayout *v_layout;
-    QHBoxLayout **h_layout;
+    fileObject **files;
 };
 
 #endif //QT_FILE_PROCESSING_INTERFACEWIDGET_H

@@ -12,21 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ad56c0f-3fab-4ae4-befc-7a510062988d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/tests.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main-test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-file-length.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../headers/ERR_ENUM.h" beforeDir="false" afterPath="$PROJECT_DIR$/../headers/ERR_ENUM.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../headers/file_related.h" beforeDir="false" afterPath="$PROJECT_DIR$/../headers/file_related.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../qt_interface/interfacewidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../qt_interface/interfacewidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/file_related.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../src/file_related.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qt_interface/interfacewidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/../qt_interface/interfacewidget.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +49,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CMakeLists.txt" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests" RUN_TARGET_NAME="tests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -79,7 +69,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616257796930</updated>
-      <workItem from="1616257800773" duration="1821000" />
+      <workItem from="1616257800773" duration="2488000" />
+      <workItem from="1616266045578" duration="641000" />
+      <workItem from="1616318519157" duration="598000" />
     </task>
     <servers />
   </component>
@@ -96,5 +88,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
