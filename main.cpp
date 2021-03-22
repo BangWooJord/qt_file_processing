@@ -20,11 +20,10 @@ int main(int argc, char *argv[]) {
     thread_vec.reserve(unique_path.size());
     int id = 0;
     for(const auto &file : unique_path){
-        uint32_t file_size = file_length(file);
         thread_vec.emplace_back(std::thread([&]() {
             long double data;
             try {
-                throw binary_read(file, data, file_size);
+                throw binary_read(file, data);
             } catch (int err) {
                 if (err < 0) std::cerr << "Error: " << err << std::endl;
             }

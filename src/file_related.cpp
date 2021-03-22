@@ -17,7 +17,7 @@ int binary_write(std::string const &filename, std::string const &path, const cha
     file_write.close();
     return 0;
 }
-int binary_read(std::string const &path, long double &data, uint32_t file_size){
+int binary_read(std::string const &path, long double &data){
     std::ifstream file_read(path.c_str(), std::ios::binary);
     if(!file_read) return ERROR_OPENING_IFILE;
     file_read.seekg (0, std::ifstream::beg);
@@ -31,6 +31,7 @@ int binary_read(std::string const &path, long double &data, uint32_t file_size){
 void process_data(long double data){
     data = 0;
 }
+/*
 
 uint32_t file_length(std::string const &path){
     std::ifstream file_read(path.c_str(), std::ios::binary);
@@ -49,4 +50,4 @@ bool remove_path(std::string &full_path){
         }
     }
     return false;
-}
+}*/
