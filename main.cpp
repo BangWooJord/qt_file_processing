@@ -14,32 +14,42 @@ int main(int argc, char *argv[]) {
     if(!openConfig("../toml_cfg/cfg.toml", "paths", unique_path)) return 0;
 
     InterfaceWidget mainPage(nullptr, unique_path);
-    mainPage.show();
+        mainPage.show();
 
     std::vector<std::thread> thread_vec;
-    thread_vec.reserve(unique_path.size());
+        thread_vec.reserve(unique_path.size());
+    auto MAX_THREAD = std::thread::hardware_concurrency();
+    MAX_THREAD = 2; ///////////////////////////////////////////////////////////////////////////////////////
     int id = 0;
-    for(const auto &file : unique_path){
-        thread_vec.emplace_back(std::thread([&]() {
-            long double data;
-            try {
-                throw binary_read(file, data);
-            } catch (int err) {
-                if (err < 0) std::cerr << "Error: " << err << std::endl;
-            }
-        }));
-        mainPage.setStatus(id, "processing");
-        ++id;
-    }
+    int thread_counter = 0;
+    std::thread create_thread([&](){
+        for(const auto &file : unique_path){
+            thread_vec.emplace_back(std::thread([&]() {
+                long double data;
+                try {
+                    throw binary_read(file, data);
+                } catch (int err) {
+                    if (err < 0) std::cerr << "Error: " << err << std::endl;
+                }
+            }));
+            mainPage.setStatus(id, "processing");
+            ++id;
+            ++thread_counter;
+        }
+    });
+
+
     id = 0;
     std::thread thread_wait([&](){
         for(auto &thread: thread_vec) {
             thread.join();
+            thread_counter--;
             mainPage.setStatus(id, "processing complete");
             ++id;
         }
     });
     a->exec();
+    create_thread.join();
     thread_wait.join();
     return 0;
 }

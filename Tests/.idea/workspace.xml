@@ -11,10 +11,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ad56c0f-3fab-4ae4-befc-7a510062988d" name="Default Changelist" comment="Added test case into unit-test file">
-      <change beforePath="$PROJECT_DIR$/../headers/file_related.h" beforeDir="false" afterPath="$PROJECT_DIR$/../headers/file_related.h" afterDir="false" />
+    <list default="true" id="7ad56c0f-3fab-4ae4-befc-7a510062988d" name="Default Changelist" comment="Added tests. Tweaked tom reading function.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/file_related.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../src/file_related.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,15 +51,15 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests" TARGET_NAME="tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests" RUN_TARGET_NAME="tests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
@@ -81,6 +81,7 @@
       <workItem from="1616318519157" duration="1197000" />
       <workItem from="1616337010239" duration="594000" />
       <workItem from="1616504538353" duration="3746000" />
+      <workItem from="1616663985578" duration="3098000" />
     </task>
     <task id="LOCAL-00001" summary="Added test case into unit-test file">
       <created>1616505399033</created>
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616505427037</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added tests. Tweaked tom reading function.">
+      <created>1616666086345</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616666086345</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added test case into unit-test file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test case into unit-test file" />
+    <MESSAGE value="Added tests. Tweaked tom reading function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests. Tweaked tom reading function." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
