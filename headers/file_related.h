@@ -5,6 +5,7 @@
 #include <cstring>
 #include <mutex>
 #include <filesystem>
+#include <random>
 #include "ERR_ENUM.h"
 
 //writing random numbers into binary file

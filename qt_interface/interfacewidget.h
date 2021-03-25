@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QProgressBar>
 #include <iostream>
 #include <set>
 #include <memory>
@@ -29,6 +30,7 @@ private:
     std::unique_ptr<Ui::InterfaceWidget> ui;
     QVBoxLayout *v_layout;
     QLabel **status_lbl;
+    QProgressBar *progress_bar;
 };
 
 #endif //QT_FILE_PROCESSING_INTERFACEWIDGET_H

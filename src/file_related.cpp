@@ -1,6 +1,6 @@
 #include "../headers/file_related.h"
 
-std::atomic<long double> data_var;
+std::atomic<long double> data_var = 123151321412414241241241241.2124244;
 
 int binary_write(std::string const &filename, std::filesystem::path &path){
     path /= filename;
@@ -21,6 +21,12 @@ int binary_read(std::string const &path, long double &data){
     file_read.seekg (0, std::ifstream::beg);
     while(file_read.read((char*)&data, sizeof(data))){
         if(data > data_var) data_var = data;
+        else{
+            std::random_device rd;
+            std::mt19937_64 mt(rd());
+            std::uniform_real_distribution<long double> uniform_dist(0, std::numeric_limits<long double>::max());
+            data_var = data_var / uniform_dist(mt);
+        }
     }
     file_read.close();
     return 0;
