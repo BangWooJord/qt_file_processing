@@ -51,6 +51,7 @@ InterfaceWidget::InterfaceWidget(QWidget *parent, std::set<std::string> const &f
 InterfaceWidget::~InterfaceWidget(){
     delete v_layout;
     delete status_lbl;
+    delete progress_bar;
 }
 
 //methods
