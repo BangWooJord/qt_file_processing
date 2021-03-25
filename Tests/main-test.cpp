@@ -13,21 +13,7 @@ TEST_CASE("Toml reading function working"){
 TEST_CASE("File reading OK"){
     long double data;
 
-    std::thread test1([&](){
-        REQUIRE(binary_read("../../example_files/file1.bin", data) == 0);
-    });
-    std::thread test2([&](){
-        REQUIRE(binary_read("../../example_files/file2.bin", data) == 0);
-    });
-    std::thread test3([&](){
-        REQUIRE(binary_read("../../example_files/file3.bin", data) == 0);
-    });
-    std::thread test4([&](){
-        REQUIRE(binary_read("../../example_files/file4.bin", data) == 0);
-    });
+    REQUIRE(binary_read("../../example_files/file1.bin", data) == 0);
+
     REQUIRE(binary_read("random_text", data) < 0);
-    test1.join();
-    test2.join();
-    test3.join();
-    test4.join();
 }

@@ -6,7 +6,7 @@
 #include <vector>
 #include <set>
 
-//TODO: юнит тесты
+//TODO: юнит тесты, функция которая делает что то с данными из файлов, сделать заново проект под Visual Studio
 
 int main(int argc, char *argv[]) {
     auto *a = new QApplication(argc, argv);
