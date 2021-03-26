@@ -11,11 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ad56c0f-3fab-4ae4-befc-7a510062988d" name="Default Changelist" comment="Added tests. Tweaked tom reading function.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main-test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="7ad56c0f-3fab-4ae4-befc-7a510062988d" name="Default Changelist" comment="Added tests. Tweaked tom reading function." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +77,7 @@
       <workItem from="1616318519157" duration="1197000" />
       <workItem from="1616337010239" duration="594000" />
       <workItem from="1616504538353" duration="3746000" />
-      <workItem from="1616663985578" duration="3098000" />
+      <workItem from="1616663985578" duration="3251000" />
     </task>
     <task id="LOCAL-00001" summary="Added test case into unit-test file">
       <created>1616505399033</created>
