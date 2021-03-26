@@ -30,7 +30,7 @@ InterfaceWidget::InterfaceWidget(QWidget *parent, std::set<std::string> const &f
             status_lbl[i]->setAlignment(Qt::AlignBottom);
         auto *h_layout = new QHBoxLayout(this);
             auto *lbl = new QLabel(this);
-                auto size = std::filesystem::file_size(file_iterator);
+                auto size = fs::file_size(file_iterator);
                 QString file_name_string = QString::fromStdString(fs::path(file_iterator).filename().u8string());
                 lbl->setText(file_name_string + " \nsize: " + QString::number(size) + " bytes");
             h_layout->addWidget(lbl);

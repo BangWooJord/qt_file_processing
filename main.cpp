@@ -20,7 +20,6 @@ int main(int argc, char *argv[]) {
     std::vector<std::thread> thread_vec;
         thread_vec.reserve(unique_path.size());
     auto MAX_THREAD = std::thread::hardware_concurrency();
-    MAX_THREAD = 2;
 
     std::atomic<int> thread_counter = 0;
     std::atomic<int> id = 0;
