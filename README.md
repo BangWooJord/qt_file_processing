@@ -1,5 +1,8 @@
 # Qt app that works with files in different threads.
 
+
+Visual Studio
+
 Files that it's reading are just random binary files, that i filled with random numbers. 
 The whole point is for those files to be big, so that threads will actually have to do some work, while processing them. 
 
