@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "file_processing_vs_2", "file_processing_vs_2\file_processing_vs_2.vcxproj", "{4EFCE552-4596-43AE-9B0C-0E8596F37F1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EFCE552-4596-43AE-9B0C-0E8596F37F1D}.Debug|x64.ActiveCfg = Debug|x64
+		{4EFCE552-4596-43AE-9B0C-0E8596F37F1D}.Debug|x64.Build.0 = Debug|x64
+		{4EFCE552-4596-43AE-9B0C-0E8596F37F1D}.Release|x64.ActiveCfg = Release|x64
+		{4EFCE552-4596-43AE-9B0C-0E8596F37F1D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6566DF4-E972-4DDC-A104-EFBDEC4263C7}
+	EndGlobalSection
+EndGlobal
