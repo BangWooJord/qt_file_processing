@@ -24,13 +24,18 @@ int main(int argc, char *argv[]) {
 
     std::atomic<int> thread_counter = 0;
     std::atomic<int> id = 0;
+
+    std::condition_variable buffer_cv;
+    std::mutex buffer_mtx;
+    std::queue<long double> buffer_q;
+
     std::thread work_th([&]() {
         std::thread create_th([&](){
             for (const auto &file : unique_path) {
                 while(thread_counter == MAX_THREAD); //если кол-во работающих потоков = максимально разрешенному - не создаем новые
                 thread_vec.emplace_back(std::thread([&]() {
                     try {
-                        throw binary_read(file);
+                        throw binary_read(file, buffer_mtx, buffer_q, buffer_cv);
                     } catch (int err) {
                         if (err < 0) std::cerr << "Error: " << err << std::endl;
                     }

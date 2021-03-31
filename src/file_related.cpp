@@ -1,9 +1,5 @@
 #include "../headers/file_related.h"
 
-std::condition_variable buffer_cv;
-std::mutex buffer_mtx;
-std::queue<long double> buffer_q;
-
 int binary_write(std::string const &filename, std::filesystem::path &path){
     path /= filename;
     std::filesystem::create_directories(path.parent_path());
@@ -17,7 +13,10 @@ int binary_write(std::string const &filename, std::filesystem::path &path){
     file_write.close();
     return 0;
 }
-int binary_read(std::string const &path){
+int binary_read(std::string const &path, 
+    std::mutex &buffer_mtx, std::queue<long double> buffer_q, 
+    std::condition_variable &buffer_cv)
+{
     std::ifstream file_read(path.c_str(), std::ios::binary);
     if(!file_read) return ERROR_OPENING_IFILE;
     long double _data;
