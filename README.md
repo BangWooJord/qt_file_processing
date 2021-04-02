@@ -8,3 +8,8 @@ Technologies:
   - Qt(5.14.2)
   - Toml11(3.6.0) - https://github.com/ToruNiina/toml11 library to work with *.toml. 
   - Catch2(2.13.4) - https://github.com/catchorg/Catch2 library for unit-tests.
+
+# HowTo
+In directory toml_cfg open file cfg.toml. 
+Change path to files you want to read.
+Save & close file. 
