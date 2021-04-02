@@ -6,8 +6,8 @@ int binary_write(std::string const &filename, std::filesystem::path &path){
     std::ofstream file_write(path, std::ios::binary | std::ios::app);
 
     if(!file_write) return ERROR_OPENING_OFILE;
-    for(auto i = 0; i < 9999; ++i){
-        long double wr = rand()%100;
+    for(auto i = 0; i < 99999; ++i){
+        long double wr = rand()%1000;
         file_write.write((char*)&wr, sizeof(wr));
     }
     file_write.close();

@@ -7,10 +7,8 @@
 #include <vector>
 #include <set>
 
-//TODO: юнит тесты, сделать заново проект под Visual Studio
-
 int main(int argc, char *argv[]) {
-    //binary_write("file4.bin", path);
+    //binary_write("file6.bin", path);
     auto *a = new QApplication(argc, argv);
     std::set<std::string> unique_path;
     if(!openConfig("../toml_cfg/cfg.toml", "paths", unique_path)) return 0;
