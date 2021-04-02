@@ -1,0 +1,6 @@
+[submodule "toml11"]
+	path = toml11
+	url = https://github.com/ToruNiina/toml11
+[submodule "Catch2"]
+	path = Catch2
+	url = https://github.com/catchorg/Catch2
