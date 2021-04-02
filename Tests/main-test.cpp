@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include <Catch2-2.13.4/single_include/catch2/catch.hpp>
+#include "../Catch2-2.13.4/single_include/catch2/catch.hpp"
 #include "file_related.h"
 #include <thread>
 #include "toml_related.h"
